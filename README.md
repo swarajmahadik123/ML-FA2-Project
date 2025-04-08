@@ -1,69 +1,123 @@
-# CICIDS 2017 Repository
+# Network Intrusion Detection Using Machine Learning
 
 ## Overview
-This repository contains Jupyter notebooks designed for analyzing the CICIDS 2017 dataset, which focuses on intrusion detection. The notebooks provide a comprehensive framework for data exploration, preprocessing, and machine learning model training.
+
+This project focuses on analyzing the CICIDS dataset to develop a robust machine learning-based intrusion detection system. The study explores various attack types (e.g., DoS, DDoS, PortScan) and utilizes advanced techniques such as feature correlation analysis, dimensionality reduction, and machine learning models to identify and classify network intrusions effectively.
+
+The key objectives of this project are:
+
+- To analyze the CICIDS dataset for patterns in network traffic.
+- To evaluate the performance of machine learning models like KNN, Random Forest, and others for intrusion detection.
+- To provide insights into feature importance and attack-specific behaviors.
+
+---
 
 ## Features
-- **Dataset Download**: Automates the retrieval of the CICIDS 2017 dataset.
-- **Exploratory Data Analysis (EDA)**: Provides insights into data distributions and patterns.
-- **Model Training**:
-  - **Binary Classification**: Logistic Regression and Support Vector Machine.
-  - **Multi-Class Classification**: K-Nearest Neighbors, Random Forest, Decision Tree.
-  - **Deep Learning**: Multi-Layer Perceptron, Convolutional Neural Network, Deep Neural Network for both binary and multi-class tasks.
+
+- **Dataset**: CICIDS2017 dataset with over 2.8 million records and 79 features.
+- **Machine Learning Models**: Implemented models include KNN, Random Forest, SVM, CNN, and more.
+- **Performance Metrics**: Accuracy, precision, recall, F1-score, and training time are evaluated.
+- **Visualizations**: Includes attack distribution plots, correlation heatmaps, MDS visualizations, and more.
+
+---
+
+## Installation
+
+1. Clone this repository:
+
+   ```bash
+   git clone https://github.com/swarajmahadik123/ML-FA2-Project.git
+
+   ```
+
+2. Install required Python packages:
+
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+3. Download the CICIDS2017 dataset from the official source and place it in the `data/` directory.
+
+---
 
 ## Usage
-Clone the repository and open the Jupyter notebooks to start analyzing the dataset. Follow the instructions within each notebook to execute the code and interpret the results.
 
-## Setting Up the Conda Environment
-To set up a Conda environment for working with the CICIDS 2017 dataset, follow these steps:
+### Preprocessing
 
-1. **Create a new Conda environment**:
-   ```bash
-   conda create -n cicids python=3.9
-   ```
+Run the preprocessing script to clean and prepare the dataset:
 
-2. **Activate the environment**:
-   ```bash
-   conda activate cicids
-   ```
+```bash
+python preprocess.py
+```
 
-3. **Install necessary libraries**:
-   ```bash
-   pip install numpy pandas seaborn matplotlib scikit-learn tensorflow
-   ```
+### Model Training
 
-4. **Install additional packages**:
-   ```bash
-   pip install missingno imbalanced-learn wget
-   ```
+Train the machine learning models by running:
 
-5. **Install Jupyter Notebook**:
-   ```bash
-   pip install jupyter notebook
-   ```
+```bash
+python train_models.py
+```
 
-6. **Install IPython kernel for Jupyter**:
-   ```bash
-   pip install ipykernel
-   ```
+### Evaluation
 
-7. **Add the Conda environment to Jupyter Notebook**:
-   ```bash
-   python -m ipykernel install --user --name=cicids
-   ```
+Evaluate model performance using:
 
-## Requirements
-Ensure you have the necessary libraries installed, such as `pandas`, `numpy`, `seaborn`, `missingno`, `imbalanced-learn`, `scikit-learn`, and `tensorflow` or `keras` for deep learning models.
+```bash
+python evaluate_models.py
+```
 
-## References
-1. **CICIDS Dataset**: [CICIDS 2017 Machine Learning Repository](https://github.com/djh-sudo/CICIDS2017-Machine-Learning/blob/main/README.md)
-2. **Data Preprocessing**: [Data Preprocessing Notebook](https://github.com/liangyihuai/CICIDS2017_data_processing/blob/master/data_preprocessing_liang.ipynb)
-3. **DNN and Preprocessing**: [DNN and Preprocessing Repository](https://github.com/fabian692/DNN-and-preprocessing-cicids-2017)
-4. **Intrusion Detection**: [Intrusion Detection Notebook](https://github.com/noushinpervez/Intrusion-Detection-CICIDS2017/blob/main/Intrusion-Detection-CIC-IDS2017.ipynb)
-5. **Dataset Preprocessing**: [CICIDS 2017 ML Preprocessing](https://github.com/mahendradata/cicids2017-ml)
-6. **Autoencoder**: [Autoencoder Model for CICIDS 2017](https://github.com/fasial634/Autoencoder-model-for-CICIDS-2017-/blob/main/Autoencoder.ipynb)
-7. **Data Cleaning and Random Forest**: [CICIDS 2017 Data Cleaning](https://github.com/Moetezafif-git/cicids2017)
+### Visualization
+
+Generate visualizations for analysis:
+
+```bash
+python visualize_results.py
+```
+
+---
+
+## Results
+
+### Key Findings
+
+- **KNN** achieved a mean cross-validation accuracy of **98%**.
+- **Random Forest** showed superior performance with an accuracy of **99.83%**.
+- Feature correlation analysis revealed strong relationships between timing-based features for detecting DoS attacks.
+
+### Visualizations
+
+- Attack distribution bar chart.
+- Correlation heatmap of network flow features.
+- Multi-dimensional scaling (MDS) plot for attack separation.
+
+---
+
+## Team Members
+
+This project was collaboratively developed by:
+
+- **Swaraj Nandkishor Mahadik** (122B1B159)
+- **Anuj Vijay Loharkar** (122B1B154)
+- **Aishwarya Marathe** (122B1B170)
+
+---
+
+## Acknowledgments
+
+We would like to express our gratitude to the authors of the CICIDS dataset and other research studies that guided this work. Their contributions have been invaluable in enriching our understanding of network intrusion detection systems.
+
+---
 
 ## License
-This project is licensed under the MIT License.
-# ML-FA2-Project
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+---
+
+## References
+
+1. Canadian Institute for Cybersecurity. CICIDS2017 Dataset Documentation.
+2. Additional references related to intrusion detection research can be found in our [research paper](./research_paper.pdf).
+
+---
+
